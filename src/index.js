@@ -10,10 +10,12 @@ import Exam4 from './Exam/Exam4';
 import Exam5 from './Exam/Exam5';
 import Exam6 from './Exam/Exam6';
 import TodoApp from './TodoApp';
+import CooinTracker from './CoinTracker';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <CooinTracker />
     <TodoApp />
     <Exam6 />
     <Exam5 />
