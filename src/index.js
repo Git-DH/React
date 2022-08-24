@@ -11,18 +11,12 @@ import Exam5 from './Exam/Exam5';
 import Exam6 from './Exam/Exam6';
 import TodoApp from './TodoApp';
 import CooinTracker from './CoinTracker';
+import MovieApp from './MovieApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CooinTracker />
-    <TodoApp />
-    <Exam6 />
-    <Exam5 />
-    <Exam4 />
-    <Exam3 />
-    <Exam1 />
-    <Exam2 />
+    <App />
   </React.StrictMode>
 );
 
