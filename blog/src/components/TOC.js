@@ -2,12 +2,19 @@ import { Component } from 'react';
 
 class TOC extends Component {
     render() {
+      let lists = [];
+      // 배열에 담는다는 코드
+      let data = this.props.data;
+      let i = 0;
+      while(i < data.length){
+        lists.push(<li key={data[i].id}><a href={"/content/"+data[i].id}>{data[i].title}</a></li>);
+        // 반복문을 작성할때 key값을 지정해 줘야한다.
+        i = i + 1;
+      }
       return (
         <nav>
           <ul>
-              <li><a href="1.html">HTML</a></li>
-              <li><a href="2.html">CSS</a></li>
-              <li><a href="3.html">JavaScript</a></li>
+              {lists}
           </ul>
           </nav>
       );
