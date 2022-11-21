@@ -5,9 +5,10 @@ class Subject extends Component {
   render() {
     return (
       <header>
-        <h1>WEB</h1>
-        world wide web
+        <h1>{this.props.title}</h1>
+        {this.props.sub}
         </header>
+        // props를 사용하여 사용자정의 태그를 만들 수 있다.
     );
   }
 }
@@ -33,8 +34,8 @@ class Content extends Component{
   render() {
     return(
       <article>
-        <h2>HTML</h2>
-        HTML is HyperText Markup Langugage.
+        <h2>{this.props.title}</h2>
+        {this.props.desc}
       </article>
     );
   }
@@ -44,9 +45,10 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Subject></Subject>
+        <Subject title="WEB" sub="world wide web!"></Subject>
+        {/* props를 사용하여 원하는 대로 수정이 가능 */}
         <TOC></TOC>
-        <Content></Content>
+        <Content title="HTML" desc="HTML is HyperText Markup Langugage."></Content>
         {/* 컴포넌트 사용법 */}
       </div>
     );
