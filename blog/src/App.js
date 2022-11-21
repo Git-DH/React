@@ -16,8 +16,7 @@ class App extends Component {
       ]
     }
   }
-  // <state>
-  // conponent가 실행 될 때 render보다 먼저 실행하고 
+  // component가 실행 될 때 render보다 먼저 실행하고 
   // component를 초기화 시켜주고싶은 코드는
   // constructor를 짜고 그 안에 코드를 작성해야한다.
   render() {
