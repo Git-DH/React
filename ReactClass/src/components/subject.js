@@ -4,7 +4,7 @@ class Subject extends Component {
     render() {
       return (
         <header>
-          <h1>{this.props.title}</h1>
+          <h1><a href='/'>{this.props.title}</a></h1>
           {this.props.sub}
           {/* 상위 컴포넌트의 값을 state와 props로 받아왔다. */}
           </header>

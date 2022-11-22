@@ -4,7 +4,7 @@ class TOC extends Component {
     render() {
       let lists = [];
       // 배열에 담는다는 코드
-      let data = this.props.data; //state값을 props로 받음
+      let data = this.props.data; //this.props.data: 내부적으로 가지고 있음, state값을 props로 받음
       let i = 0;
       while(i < data.length){
         lists.push(<li key={data[i].id}><a href={"/content/"+data[i].id}>{data[i].title}</a></li>);

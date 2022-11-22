@@ -13,16 +13,27 @@ class App extends Component {
     super(props);
     // 원하는 값을 state로 만들고 그 값을 props로 보낼 수 있도록 함
     this.state = {
+      mode:'welcome',
       subject:{title:'WEB', sub:'world wide web!'},
+      welcome:{title:'welcome', desc:'Hello, React!!'},
       contents: [
-        {id:1, title:'HTML', desc:'HTML is HyperText ...'},
+        {id:1, title:'HTML', desc:'HTML is for information'},
         {id:2, title:'CSS', desc:'CSS for design'},
         {id:3, title:'JavaScript', desc:'JavaScript is for interactive'},
       ]
     }
   }
-  
+  // react에서는 props나 state의 값이 바뀌면 render함수도 다시 호출된다.(vue의 update와 비슷)
+  // render함수: 어떤 html을 그릴것인지 정하는 것
   render() {
+    let _title, _desc = null;
+    if(this.state.mode === 'welcome') {
+      _title = this.state.welcome.title;
+      _desc = this.state.welcome.desc;
+    } else if(this.state.mode === 'read') {
+      _title = this.state.contents[0].title;
+      _desc = this.state.contents[0].desc;
+    }
     return (
       <div className='App'>
         <Subject 
@@ -32,7 +43,7 @@ class App extends Component {
         {/* 컴포넌트 사용법: html 태그사용과 비슷하게 사용 */}
         <TOC data={this.state.contents}></TOC>
         {/* 상위 컴포넌트의 값을 하위 컴포넌트로 props를 이용하여 전달 가능하다. */}
-        <Content title="HTML" desc="HTML is HyperText Markup Langugage."></Content>
+        <Content title={_title} desc={_desc}></Content>
         {/* props를 사용하여 원하는 대로 수정이 가능 */}
       </div>
     );
