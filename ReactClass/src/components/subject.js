@@ -6,6 +6,7 @@ class Subject extends Component {
         <header>
           <h1>{this.props.title}</h1>
           {this.props.sub}
+          {/* 상위 컴포넌트의 값을 state와 props로 받아왔다. */}
           </header>
           // props를 사용하여 사용자정의 태그를 만들 수 있다.
       );
