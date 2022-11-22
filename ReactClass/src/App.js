@@ -47,7 +47,8 @@ class App extends Component {
             // this.state.mode='welcome'; 이 코드로는 이벤트 작동이 안된다.
             this.setState({
               mode:'welcome'
-            })// react에서 사용하는 방식
+            })
+            // react에서는 construnctor에 있는 state값을 바꾸려면 setState()함수의 형태로 작성해야한다.
           }.bind(this)}>{this.state.subject.title}</a></h1>
           {/* bind(this): 이벤트의 e로인해 this의 값을 찾을 수 없을때 추가해준다. */}
           {this.state.subject.sub}
