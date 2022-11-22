@@ -13,7 +13,7 @@ class App extends Component {
     super(props);
     // 원하는 값을 state로 만들고 그 값을 props로 보낼 수 있도록 함
     this.state = {
-      mode:'welcome',
+      mode:'read',
       subject:{title:'WEB', sub:'world wide web!'},
       welcome:{title:'welcome', desc:'Hello, React!!'},
       contents: [
@@ -36,10 +36,22 @@ class App extends Component {
     }
     return (
       <div className='App'>
-        <Subject 
+        {/* <Subject 
           title={this.state.subject.title} 
           sub={this.state.subject.sub}>
-        </Subject>
+        </Subject> */}
+        <header>
+          <h1><a href='/' onClick={function(e){
+            console.log(e);
+            e.preventDefault(); //기본적인 html태그의기능을 사용하지 못하게 하는코드
+            // this.state.mode='welcome'; 이 코드로는 이벤트 작동이 안된다.
+            this.setState({
+              mode:'welcome'
+            })// react에서 사용하는 방식
+          }.bind(this)}>{this.state.subject.title}</a></h1>
+          {/* bind(this): 이벤트의 e로인해 this의 값을 찾을 수 없을때 추가해준다. */}
+          {this.state.subject.sub}
+          </header>
         {/* 컴포넌트 사용법: html 태그사용과 비슷하게 사용 */}
         <TOC data={this.state.contents}></TOC>
         {/* 상위 컴포넌트의 값을 하위 컴포넌트로 props를 이용하여 전달 가능하다. */}
